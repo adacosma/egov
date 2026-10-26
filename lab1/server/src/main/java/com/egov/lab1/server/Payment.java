@@ -35,9 +35,9 @@ public class Payment {
     private Integer nrBileteTotal;
 
     private BigDecimal pretUnitar;
-    private BigDecimal subtotal;
+    private BigDecimal valoareBilete;
     private BigDecimal reducere;
-    private BigDecimal bazaImpozabila;
+    private BigDecimal subtotal;
     private BigDecimal tva;
     private BigDecimal total;
 

@@ -43,14 +43,13 @@ public class PdfService {
                 text(cs, regular, 12, 50, 543, "Bilete intregi: " + p.getNrBileteIntregi() + " | Bilete studenti: " + p.getNrBileteStudenti() + " (Total: " + p.getNrBileteTotal() + ")");
                 text(cs, regular, 12, 50, 525, "Pret unitar (TVA inclus): " + money(p.getPretUnitar()));
 
-                // caseta cu totaluri
                 cs.addRect(300, 330, 245, 150);
                 cs.stroke();
-                text(cs, regular, 12, 315, 458, "Subtotal: " + money(p.getSubtotal()));
+                text(cs, regular, 12, 315, 458, "Valoare bilete (TVA incl.): " + money(p.getValoareBilete()));
                 text(cs, regular, 12, 315, 436, "Reducere studenti: -" + money(p.getReducere()));
-                text(cs, regular, 12, 315, 414, "Baza impozabila: " + money(p.getBazaImpozabila()));
+                text(cs, regular, 12, 315, 414, "Subtotal (fara TVA): " + money(p.getSubtotal()));
                 text(cs, regular, 12, 315, 392, "TVA 21%: " + money(p.getTva()));
-                text(cs, bold, 16, 315, 350, "Total: " + money(p.getTotal()));
+                text(cs, bold, 16, 315, 350, "Total de plata: " + money(p.getTotal()));
 
                 hr(cs, 50, 310, 545);
                 text(cs, bold, 14, 50, 285, "Beneficiar");

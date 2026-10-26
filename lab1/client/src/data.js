@@ -3,8 +3,8 @@ export const TEATRU = {
     iban: "RO00EXMP0000000000000001",
 };
 
-export const TVA = 0.21;             // inclus în prețul biletului
-export const REDUCERE_STUDENT = 0.5; // 50% pentru studenți
+export const TVA = 0.21;
+export const REDUCERE_STUDENT = 0.5;
 export const MAX_BILETE = 10;
 
 export const SPECTACOLE = {
@@ -62,6 +62,6 @@ export const SPECTACOLE = {
             { data: "2026-12-04", ora: "19:00" },
             { data: "2026-12-15", ora: "19:00" },
         ],
-        preturi: { "Stal": 155, "Lojă": 195, "Balcon": 95 },
+        preturi: { "Sală": 155, "Lojă": 195, "Balcon": 95 },
     },
 };

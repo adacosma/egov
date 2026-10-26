@@ -40,12 +40,12 @@ export default function App() {
 
   const subtotalIntregi = round2(nIntregi * pret);
   const subtotalStudenti = round2(nStudenti * pret * REDUCERE_STUDENT);
-  const subtotal = round2(subtotalIntregi + subtotalStudenti);
 
-  const reducere = subtotalStudenti;
-  const total = subtotal;
-  const baza = round2(total / (1 + TVA));
-  const tva = round2(total - baza);
+  const valoareBilete = round2(totalBilete * pret);
+  const reducere = round2(nStudenti * pret * REDUCERE_STUDENT);
+  const total = round2(valoareBilete - reducere);
+  const subtotal = round2(total / (1 + TVA));
+  const tva = round2(total - subtotal);
 
   const errors = {};
   if (!/^[\p{L}][\p{L}' -]+$/u.test(form.nume.trim())) errors.nume = "Introdu un nume valid";
@@ -82,9 +82,9 @@ export default function App() {
   <nrBileteStudenti>${nStudenti}</nrBileteStudenti>
   <nrBileteTotal>${totalBilete}</nrBileteTotal>
   <pretUnitar>${pret}</pretUnitar>
-  <subtotal>${subtotal.toFixed(2)}</subtotal>
+   <valoareBilete>${valoareBilete.toFixed(2)}</valoareBilete>
   <reducere>${reducere.toFixed(2)}</reducere>
-  <bazaImpozabila>${baza.toFixed(2)}</bazaImpozabila>
+  <subtotal>${subtotal.toFixed(2)}</subtotal>
   <tva>${tva.toFixed(2)}</tva>
   <total>${total.toFixed(2)}</total>
   <iban>${TEATRU.iban}</iban>
@@ -258,8 +258,8 @@ export default function App() {
 
             <div className="summary-box">
               <div className="summary-row">
-                <span>Subtotal:</span>
-                <b>{subtotal.toFixed(2)} RON</b>
+                <span>Valoare bilete (TVA inclus):</span>
+                <b>{valoareBilete.toFixed(2)} RON</b>
               </div>
               {reducere > 0 && (
                   <div className="summary-row" style={{ color: "#16a34a" }}>
@@ -268,8 +268,8 @@ export default function App() {
                   </div>
               )}
               <div className="summary-row">
-                <span>Bază impozabilă:</span>
-                <b>{baza.toFixed(2)} RON</b>
+                <span>Subtotal (fără TVA):</span>
+                <b>{subtotal.toFixed(2)} RON</b>
               </div>
               <div className="summary-row">
                 <span>TVA (21%):</span>
