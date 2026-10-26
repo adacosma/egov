@@ -1,9 +1,9 @@
-   node_modules/
-   dist/
-   build/
-   target/
-   .gradle/
-   .idea/
-   *.iml
-   .env
-   application-local.properties
+node_modules/
+dist/
+build/
+target/
+.gradle/
+.idea/
+*.iml
+.env
+application-local.properties
