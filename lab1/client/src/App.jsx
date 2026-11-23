@@ -150,6 +150,9 @@ export default function App() {
           <div className="form-header">
             <h1>Bilete la Operetă</h1>
             <p>{TEATRU.nume}</p>
+            <a className="secondary-btn" href={`${API}/api/reports/comenzi`} target="_blank" rel="noreferrer" style={{ marginTop: "12px" }}>
+              Descarcă raportul comenzilor (PDF)
+            </a>
           </div>
 
           <form onSubmit={submit} noValidate>
